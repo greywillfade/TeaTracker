@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+<meta charset="UTF-8">
+<title>Tea Tracker</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<meta name="description" content="Tea tracker - what is Sally Jenkinson drinking?">
+<meta name="keywords" content="tea, jasmine, drinks, sally jenkinson" />
+    
+<link href='http://fonts.googleapis.com/css?family=Lato|Cinzel+Decorative:400,700' rel='stylesheet' type='text/css'>
+<link rel='stylesheet' href='styles.css'>
+<script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js?ver=1.8.3'></script>
+
+<script>
+$(document).ready(function(){
+    
+    //Tile clicky
+    $(".grid li div a").click(function(e) {
+        e.preventDefault();
+        var prnt = $(this).parent();
+        var teatype = prnt.attr("data-tea");
+        
+        //Fade out animation
+        $(prnt).animate({opacity: 0.25}, 200, function() {
+            // Fade out animation complete - re-darken
+            $(prnt).animate({opacity: 1}, 200);
+        });
+        
+        //Make the ajax call to register the drink
+        $.post("http://www.sallyjenkinson.co.uk/labs/teatracker/service/moartea.php", {teatype: teatype});
+    });
+});
+</script>
+</head>
+
+<body>
+<script type="text/javascript">
+var _gaq = _gaq || [];
+_gaq.push(['_setAccount', 'UA-2631465-3']);
+_gaq.push(['_trackPageview']);
+
+(function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+})();
+</script>
+
+<section id="teatitle" class="teatitle">
+    <h1>Tea time!</h1>
+    <img src="res/cupicon.png" />
+</section>
+
+<section id="teacard" class="teacard">
+<ul class="grid">
+    <li>
+        <div id="tile0" class="jas" data-tea="jasmine">
+            <a href="#">Jasmine</a>
+        </div>
+    </li>
+    <li>
+        <div id="tile1" class="dengbrek" data-tea="dengbrek">
+            <a href="#">Black English breakfast</a>
+        </div>
+    </li>
+    <li>
+        <div id="tile2" class="wengbrek" data-tea="wengbrek">
+            <a href="#">White English breakfast</a>
+        </div>
+    </li>
+    <li>
+        <div id="tile3" class="grn" data-tea="green">
+            <a href="#">Green tea</a>
+        </div>
+    </li>
+    <li>
+        <div id="tile4" class="ool" data-tea="oolong">
+            <a href="#">Oolong</a>
+        </div>
+    </li>
+    <li>
+        <div id="tile5" class="camo" data-tea="camomile">
+            <a href="#">Camomile</a>
+        </div>
+    </li>
+    <li>
+        <div id="tile6" class="pep" data-tea="peppermint">
+            <a href="#">Peppermint</a>
+        </div>
+    </li>
+    <li>
+        <div id="tile7" class="lem" data-tea="lemonginger">
+            <a href="#">Lemon &amp; ginger</a>
+        </div>
+    </li>
+    <li>
+        <div id="tile8" class="roo" data-tea="rooibos">
+            <a href="#">Rooibos </a>
+        </div>
+    </li>
+    <li>
+        <div id="tile9" class="dar" data-tea="darjeeling">
+            <a href="#">Darjeeling</a>
+        </div>
+    </li>
+    <li>
+        <div id="tile10" class="eg" data-tea="earlgrey">
+            <a href="#">Earl grey</a>
+        </div>
+    </li>
+    <li>
+        <div id="tile11" class="fruit" data-tea="fruit">
+            <a href="#">Fruit tea</a>
+        </div>
+    </li>
+</ul>
+</section>
+    
+
+<footer>
+<p class="stats"><a href="http://sallyjenkinson.co.uk/labs/teatracker/mytea.php">View stats</a></p>
+<p>A mini-hack by <a href="http://www.sallyjenkinson.co.uk">Sally Jenkinson</a></p>
+</footer>
+
+</body>
+</html>
