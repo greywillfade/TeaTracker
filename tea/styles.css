@@ -4,12 +4,7 @@ www.sallyjenkinson.co.uk
 @sjenkinson
 */
 
-/* Old colours
-Body background-color:#959595;
-color:#494d50;
-Orange: color:#ffbb33;
-*/
-
+/* General styles */
 * { 
 	-moz-box-sizing: border-box; 
 	-webkit-box-sizing: border-box; 
@@ -23,8 +18,8 @@ html, body, div {
 }
 
 body {
-    font-family: 'Open Sans', sans-serif;
-    background-color:#ECF0F1;
+    font-family: 'Raleway', sans-serif;
+    background-color:#173a53;
 }
 
 ol, ul { 
@@ -37,22 +32,60 @@ header, footer, nav, section, article, hgroup, figure {
 	display: block;	
 }
 
-footer a {
-    color:#333;
+
+/* Title section */
+#teatitle {
+    margin:0 auto;
+    width:100%;
+    margin-top:0em;
+    text-align:left;
 }
 
-.grid {
-	margin: 0 -1em;
-	overflow: hidden;
+h1 {
+    padding:0.2em 0 0 0;
+    margin:0;
+    font-size: 5em;
+    font-weight: 100;
+    font-family: 'Sue Ellen Francisco', cursive;
+    color:#fff;
+    text-transform: lowercase;
+    text-align: center;
 }
 
-.grid > section {
-	padding: 1em 1em 0.5em;
+
+/* Summary of today's tea */
+.statsholder {
+    margin:-0.5em 0 0.5em 0;
+    background-color: #f36639;
+    padding: 1em;
 }
 
-.grid ul {
-	overflow: hidden;
+.subtitle {
+    text-transform:uppercase;
+    font-size:1.2em;
+    color: #333;
+    font-weight: bold;
+    text-align: center;
 }
+
+.cupstoday {
+    color:#fff;
+}
+
+.numcups {
+    font-size:4em;
+    font-weight:700;
+    padding-right:0.2em;
+    color:#173a53;
+}
+
+.stathome {
+    margin-top:-1.3em;
+    font-size: 1em;
+}
+
+
+/* Main elements for teas */
 
 .grid {
     overflow: hidden;
@@ -69,80 +102,45 @@ footer a {
 }
     
 #teacard {
-    font-size:0.8em;
+    font-size:0.9em;
     text-transform:uppercase;
 }
 
 #teacard a {
     text-decoration:none;
-    color:#fff;
+    color:#f36639;
     font-weight:700;
-    padding:1em 5em 1em 1.5em;
-}
-
-#teatitle {
-    margin:0 auto;
-    width:100%;
-    max-width:961px;
-    margin-top:0em;
-    text-align:left;
-}
-
-.statsholder {
-    margin-top:-0.5em;
-    margin-left:1.8em;
-}
-
-.subtitle {
-    text-transform:uppercase;
-    font-size:0.75em;
-}
-
-.cupstoday {
-    color:#494d50;
-}
-
-.numcups {
-    font-size:4em;
-    font-weight:700;
-    padding-right:0.2em;
-    color:#F1C40F;
-}
-
-.stathome {
-    margin-top:-1.3em;
-}
-    
-h1 {
-    font-weight:300;
-    font-size:3em;
-    padding:0.5em 0 0 0.5em;
-    margin:0;
-    color:#16A085;
+    padding:1em 1em 1em 1.5em;
 }
 
 .grid li > div {
-    background-color:#1ABC9C;
-    padding:1em 0 1em 1em;
+    background-color:#dbdbdb;
+    padding:1.2em 0 1.2em 1em;
 }
 
+
+/* Footer - link to full stats and by SJ link */
 .stats {
     font-size:1.5em;
     text-align:right;
     text-transform:uppercase;
-    font-weight:300;
-    background-color:#BDC3C7;
+    font-weight:700;
+    background-color:#fff;
     margin:0 0.25em;
-    width:48%;
     padding:0.5em 0.5em;
 }
 
 .stats a {
-    color:#ECF0F1;
+    color:#173a53;
     text-decoration:none;
 }
 
 .credit {
     font-size:0.8em;
     margin-left:1em;
+    color: #fff;
+}
+
+footer a {
+    color:#fff;
 }
