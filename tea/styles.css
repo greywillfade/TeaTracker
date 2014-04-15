@@ -1,0 +1,148 @@
+/*
+Styles for Teatracker by Sally Jenkinson
+www.sallyjenkinson.co.uk
+@sjenkinson
+*/
+
+/* Old colours
+Body background-color:#959595;
+color:#494d50;
+Orange: color:#ffbb33;
+*/
+
+* { 
+	-moz-box-sizing: border-box; 
+	-webkit-box-sizing: border-box; 
+	box-sizing: border-box; 
+}
+
+html, body, div { 
+	margin: 0; 
+	padding: 0; 
+	border: 0;
+}
+
+body {
+    font-family: 'Open Sans', sans-serif;
+    background-color:#ECF0F1;
+}
+
+ol, ul { 
+	list-style: none;
+	margin: 0;
+	padding: 0;
+}
+
+header, footer, nav, section, article, hgroup, figure {
+	display: block;	
+}
+
+footer a {
+    color:#333;
+}
+
+.grid {
+	margin: 0 -1em;
+	overflow: hidden;
+}
+
+.grid > section {
+	padding: 1em 1em 0.5em;
+}
+
+.grid ul {
+	overflow: hidden;
+}
+
+.grid {
+    overflow: hidden;
+    padding: 0.5em 0 0 0.5em;
+    max-width: 76em;
+    margin: 0 auto;
+}
+    
+.grid li {
+    padding: 0 0.5em 0.5em 0;
+    width: 100%;
+    float: left;
+    margin-bottom:0.3em;
+}
+    
+#teacard {
+    font-size:0.8em;
+    text-transform:uppercase;
+}
+
+#teacard a {
+    text-decoration:none;
+    color:#fff;
+    font-weight:700;
+    padding:1em 5em 1em 1.5em;
+}
+
+#teatitle {
+    margin:0 auto;
+    width:100%;
+    max-width:961px;
+    margin-top:0em;
+    text-align:left;
+}
+
+.statsholder {
+    margin-top:-0.5em;
+    margin-left:1.8em;
+}
+
+.subtitle {
+    text-transform:uppercase;
+    font-size:0.75em;
+}
+
+.cupstoday {
+    color:#494d50;
+}
+
+.numcups {
+    font-size:4em;
+    font-weight:700;
+    padding-right:0.2em;
+    color:#F1C40F;
+}
+
+.stathome {
+    margin-top:-1.3em;
+}
+    
+h1 {
+    font-weight:300;
+    font-size:3em;
+    padding:0.5em 0 0 0.5em;
+    margin:0;
+    color:#16A085;
+}
+
+.grid li > div {
+    background-color:#1ABC9C;
+    padding:1em 0 1em 1em;
+}
+
+.stats {
+    font-size:1.5em;
+    text-align:right;
+    text-transform:uppercase;
+    font-weight:300;
+    background-color:#BDC3C7;
+    margin:0 0.25em;
+    width:48%;
+    padding:0.5em 0.5em;
+}
+
+.stats a {
+    color:#ECF0F1;
+    text-decoration:none;
+}
+
+.credit {
+    font-size:0.8em;
+    margin-left:1em;
+}

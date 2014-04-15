@@ -8,14 +8,21 @@
 <meta name="description" content="Tea tracker - what is Sally Jenkinson drinking?">
 <meta name="keywords" content="tea, jasmine, drinks, sally jenkinson" />
     
-<link href='http://fonts.googleapis.com/css?family=Lato|Cinzel+Decorative:400,700' rel='stylesheet' type='text/css'>
+<link href='http://fonts.googleapis.com/css?family=Open+Sans:400,300,700' rel='stylesheet' type='text/css'>
 <link rel='stylesheet' href='styles.css'>
 <script type='text/javascript' src='http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js?ver=1.8.3'></script>
+<script type="text/javascript" src="js/functions.js"></script>
 
 <script>
 $(document).ready(function(){
     
-    //Tile clicky
+    //Set the date
+    currentDate();
+    
+    //Get the number so far
+    getTotalCups();
+    
+    //Tea clicky
     $(".grid li div a").click(function(e) {
         e.preventDefault();
         var prnt = $(this).parent();
@@ -28,89 +35,88 @@ $(document).ready(function(){
         });
         
         //Make the ajax call to register the drink
-        $.post("http://www.sallyjenkinson.co.uk/labs/teatracker/service/moartea.php", {teatype: teatype});
+        $.post("", {teatype: teatype})
+        .done(function(data) {
+            //Update the page totals
+            getTotalCups();
+        });
+        
+        //Update the page totals
+        getTotalCups();
     });
 });
 </script>
 </head>
 
 <body>
-<script type="text/javascript">
-var _gaq = _gaq || [];
-_gaq.push(['_setAccount', 'UA-2631465-3']);
-_gaq.push(['_trackPageview']);
-
-(function() {
-    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
-    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
-    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
-})();
-</script>
 
 <section id="teatitle" class="teatitle">
-    <h1>Tea time!</h1>
-    <img src="res/cupicon.png" />
+    <h1>Tea Tracker</h1>
+    <div class="statsholder">
+        <p class="subtitle" id="today"></p>
+        <p class="subtitle stathome" id="cuptotal"></p>
+    </div>
 </section>
 
 <section id="teacard" class="teacard">
 <ul class="grid">
     <li>
-        <div id="tile0" class="jas" data-tea="jasmine">
+        <div id="tile0" class="jas" data-tea="Jasmine">
             <a href="#">Jasmine</a>
         </div>
     </li>
     <li>
-        <div id="tile1" class="dengbrek" data-tea="dengbrek">
+        <div id="tile1" class="dengbrek" data-tea="Dark English Breakfast">
             <a href="#">Black English breakfast</a>
         </div>
     </li>
     <li>
-        <div id="tile2" class="wengbrek" data-tea="wengbrek">
+        <div id="tile2" class="wengbrek" data-tea="White English Breakfast">
             <a href="#">White English breakfast</a>
         </div>
     </li>
     <li>
-        <div id="tile3" class="grn" data-tea="green">
+        <div id="tile3" class="grn" data-tea="Green">
             <a href="#">Green tea</a>
         </div>
     </li>
     <li>
-        <div id="tile4" class="ool" data-tea="oolong">
+        <div id="tile4" class="ool" data-tea="Oolong">
             <a href="#">Oolong</a>
         </div>
     </li>
     <li>
-        <div id="tile5" class="camo" data-tea="camomile">
+        <div id="tile5" class="camo" data-tea="Camomile">
             <a href="#">Camomile</a>
         </div>
     </li>
     <li>
-        <div id="tile6" class="pep" data-tea="peppermint">
+        <div id="tile6" class="pep" data-tea="Peppermint">
             <a href="#">Peppermint</a>
         </div>
     </li>
     <li>
-        <div id="tile7" class="lem" data-tea="lemonginger">
+        <div id="tile7" class="lem" data-tea="Lemon and Ginger">
             <a href="#">Lemon &amp; ginger</a>
         </div>
     </li>
     <li>
-        <div id="tile8" class="roo" data-tea="rooibos">
+        <div id="tile8" class="roo" data-tea="Rooibos">
             <a href="#">Rooibos </a>
         </div>
     </li>
     <li>
-        <div id="tile9" class="dar" data-tea="darjeeling">
+        <div id="tile9" class="dar" data-tea="Darjeeling">
             <a href="#">Darjeeling</a>
         </div>
     </li>
     <li>
-        <div id="tile10" class="eg" data-tea="earlgrey">
+        <div id="tile10" class="eg" data-tea="Earl Grey">
             <a href="#">Earl grey</a>
         </div>
     </li>
     <li>
-        <div id="tile11" class="fruit" data-tea="fruit">
+        <div id="tile11" class="fruit" data-tea="Fruit">
             <a href="#">Fruit tea</a>
         </div>
     </li>
@@ -120,7 +126,7 @@ _gaq.push(['_trackPageview']);
 
 <footer>
 <p class="stats"><a href="http://sallyjenkinson.co.uk/labs/teatracker/mytea.php">View stats</a></p>
-<p>A mini-hack by <a href="http://www.sallyjenkinson.co.uk">Sally Jenkinson</a></p>
+<p class="credit">A mini-hack by <a href="http://www.sallyjenkinson.co.uk">Sally Jenkinson</a></p>
 </footer>
 
 </body>
